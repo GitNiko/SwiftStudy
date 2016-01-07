@@ -8,7 +8,7 @@
 
 // TODO:
 // 可以输出一个学习的结构树
-class Study {
+public class Study {
     private var cusor: String
     private var master: [String:[Paragraph]]!
     // Master
