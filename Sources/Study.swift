@@ -15,28 +15,28 @@ public class Study {
     //    Chapter
     //      Paragraph
     //
-    init() {
+    public init() {
         self.cusor = ""
         self.master = Dictionary()
     }
 
-    func chapter(newTitle title: String) -> Study! {
+    public func chapter(newTitle title: String) -> Study! {
         self.master[title] = []
         self.cusor = title
         return self
     }
 
-    func chapter(exitTitle title: String) -> Study! {
+    public func chapter(exitTitle title: String) -> Study! {
         self.cusor = title
         return self
     }
 
-    func paragraph(title: String, _ doSomeThing: () -> Void) -> Study! {
+    public func paragraph(title: String, _ doSomeThing: () -> Void) -> Study! {
         self.master[self.cusor]?.append(Paragraph(title: title, handler: doSomeThing))
         return self
     }
 
-    func run() -> Void {
+    public func run() -> Void {
         for (chapterTitle, paragraphs) in self.master {
             print(">>>>>>>>>>>>>\(chapterTitle)>>>>>>>>>>>>>")
             for paragraph in paragraphs {
