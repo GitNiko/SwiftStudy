@@ -47,6 +47,18 @@ public class Study {
             print(">>>>>>>>>>>>>>>>end>>>>>>>>>>>>>>>>")
         }
     }
+
+    public func run(chapterTitle: String) -> Void {
+        guard let chapter = self.master[chapterTitle] else {
+            print("no exist chapter: \(chapterTitle)")
+            return
+        }
+        for paragraph in chapter {
+            print("///////////////\(paragraph.title)/////////////")
+            paragraph.handler()
+            print("/////////////////end///////////////")
+        }
+    }
 }
 class Paragraph {
     var handler:() -> Void!
